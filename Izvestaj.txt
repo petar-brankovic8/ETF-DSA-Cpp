@@ -1,0 +1,362 @@
+Opis resenja:
+U fajlu "main.cpp" je implementiran prikaz menija dostupnih operacija, izbor operacije, unos argumenata operacije, pozivanje operacije i ispis greske u slucaju da je operacija prijavi.
+
+Socijalna mreza je implementirana kao objekat klase "Graph" cija je definicija data u fajlu "Graph.h". Clanovi klase "Graph" su leksikografski sortiran niz "string V[MAXN]" sa imenima korisnika, niz glava pocetaka liste susedstva "ListNode E[MAXN]", pomocna metoda "Get_Identificator(string name)" koja vraca poziciju datog imena u nizu "V[]", i javne metode za svaku trazenu operaciju u domacem zadatku.
+
+Impelementacije operacija (metoda klase "Graph") su date u fajlu "Graph.cpp" sa detaljno ispisanim komentarima.
+
+
+
+
+
+Log:
+
+1. Test Primer:
+
+Izaberite operaciju:
+1 - Ucitaj socijalnu mrezu iz fajla
+2 - Dodaj korisnika
+3 - Ukloni korisnika
+4 - Dodaj pracenje
+5 - Ukloni pracenje
+6 - Prikazi socijalnu mrezu
+7 - Izbrisi socijalnu mrezu
+8 - Lajkuj objavu
+9 - Nadji najvecu strogo povezanu komponentu socijalne mreze
+10 - Ispisi najverovatniji put od korisnika do korisnika
+11 - Nadji k-tu najuticajniju osobu
+12 - Ispisi meni sa operacijama
+ 0 - Prekid rada
+
+Unesi broj operacije: 2
+Unesi ime korisnika: Atanasije
+Korisnik je uspesno dodat.
+
+Unesi broj operacije: 2
+Unesi ime korisnika: Jovan
+Korisnik je uspesno dodat.
+
+Unesi broj operacije: 4
+Unesi ime korisnika koji zapracuje: Atanasije
+Unesi ime korisnika koji je zapracen: Jovan
+Unesi intenzitet odnosa [0, 1]: 0.4
+Pracenje je uspesno dodato.
+
+Unesi broj operacije: 6
+Broj korisnika: 2
+Lista korisnika i njihovih konekcija:
+        - Atanasije: Jovan(0.400)
+        - Jovan:
+
+Unesi broj operacije: 8
+Unesi ime korisnika koji lajkuje: Atanasije
+Unesi ime korisnika cija je objava lajkovana: Jovan
+Objava je uspesno lajkovana.
+
+Unesi broj operacije: 6
+Broj korisnika: 2
+Lista korisnika i njihovih konekcija:
+        - Atanasije: Jovan(0.500)
+        - Jovan:
+
+Unesi broj operacije: 9
+Velicina najvece komponente: 1
+Korisnici koji pripadaju najvecoj komponenti: Atanasije
+
+Unesi broj operacije: 4
+Unesi ime korisnika koji zapracuje: Jovan
+Unesi ime korisnika koji je zapracen: Atanasije
+Unesi intenzitet odnosa [0, 1]: 0.7
+Pracenje je uspesno dodato.
+
+Unesi broj operacije: 9
+Velicina najvece komponente: 2
+Korisnici koji pripadaju najvecoj komponenti: Atanasije Jovan
+
+Unesi broj operacije: 5
+Unesi ime korisnika koji otpracuje: Atanasije
+Unesi ime korisnika koje je otpracen: Jovan
+Pracenje je uspesno uklonjeno.
+
+Unesi broj operacije: 6
+Broj korisnika: 2
+Lista korisnika i njihovih konekcija:
+        - Atanasije:
+        - Jovan: Atanasije(0.700)
+
+Unesi broj operacije: 10
+Unesi ime prvog korisnika: Jovan
+Unesi ime drugog korisnika: Atanasije
+Najverovatniji put: Jovan - (1) -> Atanasije - (0.700)
+
+Unesi broj operacije: 10
+Unesi ime prvog korisnika: Atanasije
+Unesi ime drugog korisnika: Jovan
+Error: Ne postoji put izmedju korisnika.
+
+Unesi broj operacije: 11
+Unesi broj k: 2
+K-ti najpopularniji korisnik: Jovan
+
+Unesi broj operacije: 11
+Unesi broj k: 1
+K-ti najpopularniji korisnik: Atanasije
+
+Unesi broj operacije: 11
+Unesi broj k: 23
+Error: Broj k mora biti u opsegu [1, n].
+
+Unesi broj operacije: 11
+Unesi broj k: asdfa
+Error: Nevalidno k.
+
+Unesi broj operacije: 2
+Unesi ime korisnika: ^Z
+Error: Nevalidno ime korisnika.
+
+
+Unesi broj operacije: 3
+Unesi ime korisnika: Janko
+Error: Korisnik "Janko" ne postoji.
+
+Unesi broj operacije: 4
+Unesi ime korisnika koji zapracuje: Atanasije
+Unesi ime korisnika koji je zapracen: Janko
+Unesi intenzitet odnosa [0, 1]: 0.3
+Error: Korisnik "Janko" ne postoji.
+
+Unesi broj operacije: 5
+Unesi ime korisnika koji otpracuje: Atanasije
+Unesi ime korisnika koje je otpracen: Jovan
+Error: Pracenje ne postoji.
+
+Unesi broj operacije: 8
+Unesi ime korisnika koji lajkuje: Atanasije
+Unesi ime korisnika cija je objava lajkovana: Jovan
+Error: Pracenje ne postoji.
+
+Unesi broj operacije: 6
+Broj korisnika: 2
+Lista korisnika i njihovih konekcija:
+        - Atanasije:
+        - Jovan: Atanasije(0.700)
+
+Unesi broj operacije: 3
+Unesi ime korisnika: Atanasije
+Korisnik je uspesno uklonjen.
+
+Unesi broj operacije: 6
+Broj korisnika: 1
+Lista korisnika i njihovih konekcija:
+        - Jovan:
+
+Unesi broj operacije: 7
+Socijalna mreza je uspesno izbrisana.
+
+Unesi broj operacije: 6
+Broj korisnika: 0
+Lista korisnika i njihovih konekcija:
+
+Unesi broj operacije: 0
+
+
+
+
+
+
+2. Test Primer:
+
+Izaberite operaciju:
+1 - Ucitaj socijalnu mrezu iz fajla
+2 - Dodaj korisnika
+3 - Ukloni korisnika
+4 - Dodaj pracenje
+5 - Ukloni pracenje
+6 - Prikazi socijalnu mrezu
+7 - Izbrisi socijalnu mrezu
+8 - Lajkuj objavu
+9 - Nadji najvecu strogo povezanu komponentu socijalne mreze
+10 - Ispisi najverovatniji put od korisnika do korisnika
+11 - Nadji k-tu najuticajniju osobu
+12 - Ispisi meni sa operacijama
+ 0 - Prekid rada
+
+Unesi broj operacije: 1
+Unesi ime fajla: network6.txt
+Socijalna mreza je uspesno ucitana.
+
+Unesi broj operacije: 6
+Broj korisnika: 6
+Lista korisnika i njihovih konekcija:
+        - Anastasija: Marko(0.550) Nikola(0.400)
+        - Maja: Anastasija(0.610) Marko(0.430)
+        - Marko:
+        - Matija: Marko(0.820) Sanja(0.210)
+        - Nikola: Marko(0.880) Sanja(0.650)
+        - Sanja: Anastasija(0.390) Maja(0.740)
+
+Unesi broj operacije: 9
+Velicina najvece komponente: 4
+Korisnici koji pripadaju najvecoj komponenti: Anastasija Sanja Maja Nikola
+
+Unesi broj operacije: 4
+Unesi ime korisnika koji zapracuje: Marko
+Unesi ime korisnika koji je zapracen: Maja
+Unesi intenzitet odnosa [0, 1]: 0.3
+Pracenje je uspesno dodato.
+
+Unesi broj operacije: 9
+Velicina najvece komponente: 5
+Korisnici koji pripadaju najvecoj komponenti: Anastasija Sanja Maja Marko Nikola
+
+Unesi broj operacije: 5
+Unesi ime korisnika koji otpracuje: Nikola
+Unesi ime korisnika koje je otpracen: Sanja
+Pracenje je uspesno uklonjeno.
+
+Unesi broj operacije: 6
+Broj korisnika: 6
+Lista korisnika i njihovih konekcija:
+        - Anastasija: Marko(0.550) Nikola(0.400)
+        - Maja: Anastasija(0.610) Marko(0.430)
+        - Marko: Maja(0.300)
+        - Matija: Marko(0.820) Sanja(0.210)
+        - Nikola: Marko(0.880)
+        - Sanja: Anastasija(0.390) Maja(0.740)
+
+Unesi broj operacije: 9
+Velicina najvece komponente: 4
+Korisnici koji pripadaju najvecoj komponenti: Anastasija Maja Marko Nikola
+
+Unesi broj operacije: 10
+Unesi ime prvog korisnika: Anastasija
+Unesi ime drugog korisnika: Maja
+Najverovatniji put: Anastasija - (1) -> Marko - (0.550) -> Maja - (0.165)
+
+Unesi broj operacije: Matija
+Error: Nevalidan broj za izbor operacije.
+Izaberite operaciju:
+1 - Ucitaj socijalnu mrezu iz fajla
+2 - Dodaj korisnika
+3 - Ukloni korisnika
+4 - Dodaj pracenje
+5 - Ukloni pracenje
+6 - Prikazi socijalnu mrezu
+7 - Izbrisi socijalnu mrezu
+8 - Lajkuj objavu
+9 - Nadji najvecu komponentu socijalne mreze
+10 - Ispisi najverovatniji put od korisnika do korisnika
+11 - Nadji k-tu najuticajniju osobu
+12 - Ispisi meni sa operacijama
+0 - Prekid rada
+
+
+Unesi broj operacije: 10
+Unesi ime prvog korisnika: Matija
+Unesi ime drugog korisnika: Anastasija
+Najverovatniji put: Matija - (1) -> Marko - (0.820) -> Maja - (0.246) -> Anastasija - (0.150)
+
+Unesi broj operacije: 11
+Unesi broj k: 1
+K-ti najpopularniji korisnik: Marko
+
+Unesi broj operacije: 11
+Unesi broj k: 6
+K-ti najpopularniji korisnik: Matija
+
+Unesi broj operacije: 11
+Unesi broj k: 2
+K-ti najpopularniji korisnik: Maja
+
+Unesi broj operacije: 7
+Socijalna mreza je uspesno izbrisana.
+
+Unesi broj operacije: 6
+Broj korisnika: 0
+Lista korisnika i njihovih konekcija:
+
+Unesi broj operacije: 0
+
+
+
+
+
+
+
+3. Test primer:
+
+Izaberite operaciju:
+1 - Ucitaj socijalnu mrezu iz fajla
+2 - Dodaj korisnika
+3 - Ukloni korisnika
+4 - Dodaj pracenje
+5 - Ukloni pracenje
+6 - Prikazi socijalnu mrezu
+7 - Izbrisi socijalnu mrezu
+8 - Lajkuj objavu
+9 - Nadji najvecu strogo povezanu komponentu socijalne mreze
+10 - Ispisi najverovatniji put od korisnika do korisnika
+11 - Nadji k-tu najuticajniju osobu
+12 - Ispisi meni sa operacijama
+ 0 - Prekid rada
+
+Unesi broj operacije: 1
+Unesi ime fajla: network30.txt
+Socijalna mreza je uspesno ucitana.
+
+Unesi broj operacije: 6
+Broj korisnika: 30
+Lista korisnika i njihovih konekcija:
+        - Alex: Alisander(0.400) Clim(0.830)
+        - Alisander:
+        - Barris: Chiquita(0.410) Clim(0.570) Ferne(0.870)
+        - Brigitta: Barris(0.560) Jeremie(0.620) Peyter(0.490)
+        - Brooke: Jeremie(0.280) Lolly(0.240) Ronald(0.720)
+        - Chiquita:
+        - Clim: Kelli(0.970) Lolly(0.120)
+        - Damiano: Fremont(0.130) Shirl(0.430)
+        - Edwin: Martin(0.160)
+        - Electra:
+        - Ferne: Martin(0.970)
+        - Fremont: Brooke(0.850)
+        - Garrot: Alisander(1.000) Lannie(0.380)
+        - Gertrud: Moshe(0.790) Yvon(0.990)
+        - Gertruda: Brooke(0.180) Gertrud(0.750)
+        - Jeremie: Gertruda(0.570)
+        - Karlene: Chiquita(0.630) Edwin(0.640) Jeremie(0.190) Martin(0.200) Peyter(0.670)
+        - Kelli: Alex(0.360) Edwin(0.780) Garrot(0.240) Gertruda(0.630) Lolly(0.970)
+        - Lannie: Barris(0.560) Lolly(0.480)
+        - Lolly: Fremont(0.660)
+        - Martin: Barris(0.370) Brooke(0.440) Clim(0.900) Fremont(0.740)
+        - Mattheus: Electra(0.190)
+        - Moshe: Teresina(0.860)
+        - Peyter: Clim(0.470) Lolly(0.700) Martin(0.670)
+        - Ronald: Yvon(0.700)
+        - Sashenka: Jeremie(0.970)
+        - Shaina:
+        - Shirl: Chiquita(0.540) Martin(0.730)
+        - Teresina: Clim(0.710)
+        - Yvon: Jeremie(0.400)
+
+Unesi broj operacije: 9
+Velicina najvece komponente: 19
+Korisnici koji pripadaju najvecoj komponenti: Alex Kelli Clim Teresina Martin Barris Lannie Garrot Ferne Edwin Moshe Gertrud Gertruda Jeremie Yvon Brooke Fremont Lolly Ronald
+
+Unesi broj operacije: 10
+Unesi ime prvog korisnika: Alex
+Unesi ime drugog korisnika: Yvon
+Najverovatniji put: Alex - (1) -> Clim - (0.830) -> Kelli - (0.805) -> Gertruda - (0.507) -> Gertrud - (0.380) -> Yvon - (0.377)
+
+Unesi broj operacije: 11
+Unesi broj k: 1
+K-ti najpopularniji korisnik: Lolly
+
+Unesi broj operacije: 11
+Unesi broj k: 30
+K-ti najpopularniji korisnik: Shaina
+
+Unesi broj operacije: 11
+Unesi broj k: 2
+K-ti najpopularniji korisnik: Kelli
+
+Unesi broj operacije: 0
